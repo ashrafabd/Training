@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <title><%= pageTitle %></title>
+</head>
+<body id="page-top" class="min-vh-100 d-flex flex-column">
+    
+    <%- include('partials/navbar.ejs') %>
+
+
+    <div class="p-3 d-flex justify-content-center">
+        <h3>Welcome to the Home page</h3>
+    </div>
+    <div class="row g-6 p-5 d-flex justify-content-center">
+        <div class="col-md-6 col-lg-6">
+            <div class="card bg-primary bg-opacity-10">
+                <div class="card-body text-center">
+                <h3 class="card-title mb-3">PokeApi</h3>
+                <p class="card-text">
+                    Use the PokeApi and list some pokemons
+                </p>
+                <a href="/list" class="btn btn-dark">see more</a>
+                </div>
+            </div>
+        </div> 
+        <div class="col-md-6 col-lg-6">
+            <div class="card bg-primary bg-opacity-10">
+                <div class="card-body text-center">
+                <h3 class="card-title mb-3">Laravel Api</h3>
+                <p class="card-text">
+                    Use my Laravel Api that is return all tasks from laravel project
+                </p>
+                <a href="/Tasks" class="btn btn-dark">see more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%- include('partials/footer.ejs') %>
+</body>
+</html>

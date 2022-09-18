@@ -1,0 +1,67 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <title><%= pageTitle %></title>
+</head>
+<body id="page-top" class="min-vh-100 d-flex flex-column">
+    
+    <%- include('partials/navbar.ejs') %>
+
+    <div class="card shadow mb-4 m-2">
+        <div class="card-header py-3">
+            <h6 class="d-inline m-0 font-weight-bold text-primary">List of Tasks</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-striped" id="dataTable" width="100%" cellspacing="0">
+                    <caption>List of Tasks</caption>
+                    <thead class="bg-dark text-light bg-opacity-50">
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+
+                    <tfoot class="bg-dark text-light bg-opacity-50">
+                        <tr>
+                            
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Status</th>
+                            
+                        </tr>
+                    </tfoot>
+
+
+                    <tbody>
+                     <% Tasks.forEach((task)=>{ %>
+                        <tr>
+                            <td class="h5"><%= task.id %></td>
+                            <td class="h6"><%= task.name %></td>
+                            <td class="h6"><%= task.description %> </td>
+                            <td class="h6">
+                                <% if(task.status ===1){ %>
+                                    <span class="text-success">Finished</span>
+                                <% } else { %>
+                                    <span class="text-danger">Not Finished</span>
+                                <% } %>
+                            </td>
+                        </tr>
+                    <% }) %>                               
+                    </tbody>
+                </table>
+            </div>
+        </div>
+</div>
+
+    <%- include('partials/footer.ejs') %>
+</body>
+</html>
